@@ -45,6 +45,8 @@ migrate_working_dir/
 .analysis_options.yaml/
 .pubspec.lock/
 .pubspec.yaml/
+.gitignore/
+.README.md
 
 
 # Symbolication related

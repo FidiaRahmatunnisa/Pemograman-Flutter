@@ -29,6 +29,10 @@ public class MahasiswaService {
         return mahasiswaRepository.findAll();
     }
     
+    public Mahasiswa getMahasiswa(Long idmahasiswa){
+        return mahasiswaRepository.findById(idmahasiswa).get();
+    }
+    
     public void insert(Mahasiswa mahasiswa){
         Optional<Mahasiswa> mahasiswaOptional = 
                 mahasiswaRepository.findMahasiswaByEmail(mahasiswa.getEmail());
@@ -61,4 +65,5 @@ public class MahasiswaService {
             mahasiswa.setEmail(email);
         }
 } 
+    
 }

@@ -1,10 +1,10 @@
-package com.fidia.mataKuliah;
+package com.fidia.nilai.nilai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MataKuliahApplicationTests {
+class NilaiApplicationTests {
 
 	
 }

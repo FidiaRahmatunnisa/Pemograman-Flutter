@@ -6,6 +6,7 @@ package com.fidia.mataKuliah.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,29 +14,39 @@ import jakarta.persistence.Table;
  *
  * @author Fidya
  */
-@Entity
 @Table
+@Entity
 public class MataKuliah {
     @Id
-    @GeneratedValue
-    private Long kode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String kode;
     private String nama;
-    private String sks;
+    private int sks;
 
     public MataKuliah() {
     }
 
-    public MataKuliah(Long kode, String nama, String sks) {
+    public MataKuliah(Long id, String kode, String nama, int sks) {
+        this.id = id;
         this.kode = kode;
         this.nama = nama;
         this.sks = sks;
     }
 
-    public Long getKode() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getKode() {
         return kode;
     }
 
-    public void setKode(Long kode) {
+    public void setKode(String kode) {
         this.kode = kode;
     }
 
@@ -47,18 +58,18 @@ public class MataKuliah {
         this.nama = nama;
     }
 
-    public String getSks() {
+    public int getSks() {
         return sks;
     }
 
-    public void setSks(String sks) {
+    public void setSks(int sks) {
         this.sks = sks;
     }
 
+    
     @Override
     public String toString() {
-        return "MataKuliah{" + "kode=" + kode + ", nama=" + nama + ", sks=" + sks + '}';
-    }
-    
-    
+        return "mataKuliah{" + "id=" + id + ", kode=" + kode + ", nama=" + nama + ", sks=" + sks + '}';
+    } 
+//    ini namanya entiti
 }

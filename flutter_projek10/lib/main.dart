@@ -40,10 +40,13 @@ class MyApp extends StatelessWidget {
             )
           ],
           centerTitle: true,
-          flexibleSpace: Container(
-            height: 500,
-            color: Colors.deepOrange,
-          ),
+          flexibleSpace: const PreferredSize(
+            child: Text("flexibelSpace"),
+            preferredSize: Size.fromHeight(400)
+            )
+            // height: 500,
+            // color: Colors.deepOrange,
+          // ),
         ),
       ),
     );

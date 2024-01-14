@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
                 counter.toString(),
                 style: TextStyle(
                   fontSize: 20+ double.parse(counter.toString()),
+                  color: Colors.deepPurple
                 ),
               ),
               Row(

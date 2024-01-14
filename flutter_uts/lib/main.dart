@@ -311,6 +311,9 @@ class MyResult extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+              // TextField(
+                 
+              // ),
               Text("Nip : $nip"),
               const SizedBox(
                 height: 20,

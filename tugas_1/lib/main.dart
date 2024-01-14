@@ -1,34 +1,35 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyUtsTest());
+  runApp(const MyUtsTest());
 }
 
-var nobp = "";
+var noBp = "";
 var nama = "";
-var MTK = 0;
-var Algo = 0;
-var Java = 0;
+var mtk = 0;
+var algo = 0;
+var java = 0;
 var rata = 0.0; 
 
 class MyUtsTest extends StatefulWidget {
+  const MyUtsTest({super.key});
   @override
   State<MyUtsTest> createState() => _MyUtsTestState();
 }
 
 class _MyUtsTestState extends State<MyUtsTest> {
-  final TextEditingController nobpController = TextEditingController();
+  final TextEditingController noBpController = TextEditingController();
   final TextEditingController namaController = TextEditingController();
-  final TextEditingController MTKController = TextEditingController();
-  final TextEditingController AlgoController = TextEditingController();
-  final TextEditingController JavaController = TextEditingController();
+  final TextEditingController mtkController = TextEditingController();
+  final TextEditingController algoController = TextEditingController();
+  final TextEditingController javaController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Tugas PraUTS"),
+          title: const Text("PraUTS_1"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(10),
@@ -36,28 +37,29 @@ class _MyUtsTestState extends State<MyUtsTest> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
             // alignment: Alignment.centerLeft,
             children: [
-              Text('nomor bp'),
+              const Text('No.bp'),
               TextField(
                 autocorrect: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "No Bp",
                   border: OutlineInputBorder(),
                 ),
                 autofocus: true,
                 onChanged: (value) {
                   setState(() {
-                    nobp = value;
+                    noBp = value;
                     // Calculate the `rata` variable.
-                    rata = (MTK + Algo + Java) / 3.0;
+                    rata = (mtk + algo + java) / 3.0;
                   });
-                  print(nobp);
+                  // ignore: avoid_print
+                  print(noBp);
                 },
-                controller: nobpController,
+                controller: noBpController,
               ),
-              Text('nama', ),
+              const Text('Nama', ),
               TextField(
                 autocorrect: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Nama",
                   border: OutlineInputBorder(),
                 ),
@@ -66,52 +68,55 @@ class _MyUtsTestState extends State<MyUtsTest> {
                   setState(() {
                     nama = value;
                     // Calculate the `rata` variable.
-                    rata = (MTK + Algo + Java) / 3.0;
+                    rata = (mtk + algo + java) / 3.0;
                   });
+                  // ignore: avoid_print
                   print(nama);
                 },
                 controller: namaController,
               ),
-              Text('nilai matematika', ),
+              const Text('Value Math', ),
               TextField(
                 autocorrect: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "MTK",
                   border: OutlineInputBorder(),
                 ),
                 autofocus: true,
                 onChanged: (value) {
                   setState(() {
-                    MTK = int.parse(value);
+                    mtk = int.parse(value);
                     // Calculate the `rata` variable.
-                    rata = (MTK + Algo + Java) / 3.0;
+                    rata = (mtk + algo + java) / 3.0;
                   });
-                  print(MTK);
+                  // ignore: avoid_print
+                  print(mtk);
                 },
-                controller: MTKController,
+                controller: mtkController,
               ),
-              Text('nilai algoritma', ),
+              const Text('Value Algorithm', ),
               TextField(
                 autocorrect: true,
-                decoration: InputDecoration(
-                  hintText: "Algoritma",
+                decoration: const InputDecoration(
+                  hintText: "Algorithm",
                   border: OutlineInputBorder(),
                 ),
                 autofocus: true,
                 onChanged: (value) {
                   setState(() {
-                    Algo = int.parse(value);
+                    algo = int.parse(value);
                     // Calculate the `rata` variable.
-                    rata = (MTK + Algo + Java) / 3.0;
+                    rata = (mtk + algo + java) / 3.0;
                   });
-                  print(Algo);
+                  // ignore: avoid_print
+                  print(algo);
                 },
-                controller: AlgoController,
+                controller: algoController,
               ),
-              Text('java', ),
+              const Text('Value Java', ),
               TextField(
                 autocorrect: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Java",
                   border: OutlineInputBorder(),
                 ),
@@ -119,14 +124,15 @@ class _MyUtsTestState extends State<MyUtsTest> {
                 onChanged: (value) {
                   setState(
                     () {
-                      Java = int.parse(value);
+                      java = int.parse(value);
                       // Calculate the `rata` variable.
-                      rata = (MTK + Algo + Java) / 3.0;
+                      rata = (mtk + algo + java) / 3.0;
                     },
                   );
-                  print(Java);
+                  // ignore: avoid_print
+                  print(java);
                 },
-                controller: JavaController,
+                controller: javaController,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,30 +144,30 @@ class _MyUtsTestState extends State<MyUtsTest> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => MyHasil(),
+                                builder: (context) => const MyResult(),
                               ),
                             );
                           },
-                          child: Text("Ok"));
+                          child: const Text("Ok"));
                     },
                   ),
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        nobpController.clear();
+                        noBpController.clear();
                         namaController.clear();
-                        MTKController.clear();
-                        AlgoController.clear();
-                        JavaController.clear();
-                        nobp = "";
+                        mtkController.clear();
+                        algoController.clear();
+                        javaController.clear();
+                        noBp = "";
                         nama = "";
-                        MTK = 0;
-                        Algo = 0;
-                        Java = 0;
+                        mtk = 0;
+                        algo = 0;
+                        java = 0;
                         rata = 0.0;
                       });
                     },
-                    child: Text("Reset"),
+                    child: const Text("Reset"),
                   ),
                 ],
               ),
@@ -173,15 +179,17 @@ class _MyUtsTestState extends State<MyUtsTest> {
   }
 }
 
-class MyHasil extends StatelessWidget {
-  const MyHasil({Key? key}) : super(key: key);
+
+
+class MyResult extends StatelessWidget {
+  const MyResult({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Hasil"),
+          title: const Text("Result"),
           leading: BackButton(
             onPressed: () {
               Navigator.pop(context);
@@ -189,33 +197,33 @@ class MyHasil extends StatelessWidget {
           ),
         ),
         body: Container(
-          padding:EdgeInsets.all(10.0),
+          padding:const EdgeInsets.all(10.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Hasil"),
-              SizedBox(
+              const Text("Result"),
+              const SizedBox(
                 height: 20,
               ),
-              Text("No BP: $nobp"),
-              SizedBox(
+              Text("No BP: $noBp"),
+              const SizedBox(
                 height: 20,
               ),
               Text("Nama: $nama"),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text("NIlai Matematika: $MTK"),
-              SizedBox(
+              Text("Result Math: $mtk"),
+              const SizedBox(
                 height: 20,
               ),
-              Text("Nilai Algoritma: $Algo"),
-              SizedBox(
+              Text("Result Algorithm: $algo"),
+              const SizedBox(
                 height: 20,
               ),
-              Text("Nilai Java: $Java"),
-              SizedBox(
+              Text("Result Java: $java"),
+              const SizedBox(
                 height: 20,
               ),
               Text("Rata: $rata"),
